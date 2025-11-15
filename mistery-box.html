@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/general.css">
   <link rel="stylesheet" href="./css/mistery-box.css">
+  <link rel="stylesheet" href="./css/modals.css">
   <title>😱Cajas misteriosas😱</title>
 </head>
 
@@ -22,7 +23,7 @@
       <h2 class="ct-text ">Aciertos: <span id="pointsSpan"></span></h2>
     </div>
     <div>
-      <a href="#" onclick="resetGame()" class="button button--piyo centered">
+      <a onclick="resetGame()" class="button button--piyo centered">
         <div class="button__wrapper">
           <span class="button__text">Reiniciar🤦</span>
         </div>
@@ -60,6 +61,22 @@
         <input type="checkbox" name="" id="b3-cb">
         <label class="box-cover" for="b3-cb"></label>
         <div class="box-content ct-text" id="b3-content">💩</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalW" class="modal modal-w">
+    <div class="modal-structure">
+      <div class="modal-body">
+        <h3>¡Diamante encontrado!</h3>
+        <div>
+          <img class="hithere diamond-modal-image" src="./svgs/diamond.svg" alt="" srcset="">
+        </div>
+        <p>Lograste econtrar el diamante!!!, click en el boton o fuera de la ventana para continuar....</p>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-button modal-button-close" onclick="closeModal()">Cerrar <img src="./svgs/close.svg" alt=""
+            srcset=""></button>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
-const boxesList=['b1-content','b2-content','b3-content']
+
+const boxesList = ['b1-content', 'b2-content', 'b3-content']
 var rdmIndex = Math.floor(Math.random() * boxesList.length);
 var rightBox = boxesList[rdmIndex];
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -10,6 +11,15 @@ window.onload = function() {
   shuffleRightBox();
   pointsSpan.innerHTML = aciertos;
 };
+
+window.addEventListener('load', function() {
+    // close modals on background click
+    document.addEventListener('click', event => {
+      if (event.target.classList.contains('modal')) {
+            closeModal();
+        }
+    });
+});
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
       if (this.checked) {
@@ -22,6 +32,7 @@ checkboxes.forEach(checkbox => {
       }
     });
 });
+
 function shuffleRightBox() {  
   uncheckAllCheckboxes();
   renableCheckboxes();
@@ -53,7 +64,7 @@ function evaluateSelection(boxSelected,box) {
       aciertos += 1;
       intentos = 0;
       pointsSpan.innerHTML = aciertos;
-      alert('ganasteeee')
+      openModal('modalW');
       shuffleRightBox()
     }, 500);
   } else {
@@ -69,4 +80,13 @@ function evaluateSelection(boxSelected,box) {
 }
 function renableCheckboxes() {
   checkboxes.forEach(checkbox => {checkbox.disabled = false;})
+}
+function openModal(modalId){
+  document.getElementById(modalId).classList.add("show");
+  document.body.classList.add('modal-open');
+}
+function closeModal() {  
+  document.querySelector('.modal.show').classList.remove("show");
+  document.body.classList.remove('modal-open');
+
 }
