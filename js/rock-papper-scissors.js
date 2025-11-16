@@ -11,8 +11,8 @@ function startBattle(playerSelection) {
     const computerChoice = options[randomIndex];
     document.querySelector('.player-choice').classList.remove('slideFromLeft');
     document.querySelector('.computer-choice').classList.remove('slideFromRight');
-    document.getElementById('player-choice-image').src = "./img/" + playerSelection + ".png";
-    document.getElementById('computer-choice-image').src = "./img/" + computerChoice + ".png";
+    document.getElementById('player-choice-image').src = "/img/" + playerSelection + ".png";
+    document.getElementById('computer-choice-image').src = "/img/" + computerChoice + ".png";
     
   }, 2000);
 }
