@@ -135,7 +135,8 @@ a{color: #fff}
   .battle-container .choices .player-choice,
   .battle-container .choices .computer-choice {
       max-width: 100px;
-    }
+  }
+  .score-container{padding: 15px;}
   .score-container .score{
     display: grid;
     place-content: center;
