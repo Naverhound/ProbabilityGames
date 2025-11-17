@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="game-container">
-    <div>
+    <div id="selectionArea">
       <p class="ct-text">Elige tu arma</p>
       <div class="options-container">
         <div class="option" onclick="startBattle('rock')">
@@ -40,6 +40,9 @@
         <p>V/S</p>
         <p>Computadora</p>
       </div>
+      <div>
+        <h4 class="ct-text">Resultado: <span id="roundWinner"></span></h4>
+      </div>
       <div class="choices">
         <div class="player-choice">
           <img id="player-choice-image" src="./img/rock.png" alt="" srcset="">
@@ -49,7 +52,16 @@
         </div>
       </div>
       <div>
-        <button>Jugar de nuevo</button>
+        <button onclick="playAgain()">Jugar de nuevo</button>
+      </div>
+    </div>
+    <div class="score-container">
+      <div class="score">
+        <p>Jugador: <span id="playerWins">0</span></p>
+        <span class="score-divider"></span>
+        <p>Computadora: <span id="computerWins">0</span></p>
+        <span class="score-divider"></span>
+        <p>Empates: <span id="gameDraws">0</span></p>
       </div>
     </div>
   </div>
